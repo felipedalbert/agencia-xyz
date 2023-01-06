@@ -18,8 +18,8 @@
 /* RESPONSIVE */
 
 .header nav label{
-    display: flex;
-    justify-content: end;
+    display: inline-flex;
+    margin-left: 140px;
 }
 
 .header .menu{
