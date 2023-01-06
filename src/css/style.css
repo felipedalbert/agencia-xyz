@@ -1,0 +1,290 @@
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body{
+    display: grid;
+    grid-template-areas: 
+    "header header header header"
+    "hero hero hero hero"
+    "about about about about"
+    "services services services services"
+    "projects projects projects projects"
+    "footer footer footer footer";
+    grid-template-columns: repeat(4, 1fr);
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+/* HEADER */
+
+.header{
+    grid-area: header;
+    background-color: #fff;
+}
+
+.header .header-container{
+    display: flex;
+    padding: 20px 40px;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 75px;
+}
+
+.header a:hover h1{
+   color: coral; 
+}
+
+.header h1{
+    font-size: 3rem;
+    font-weight: 700;
+    transition: .3s ease-in-out;
+} 
+
+
+
+
+/* HERO */
+  
+.hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: hero;
+    height: 85vh;
+    background: url(../images/lemons.jpg) center center no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero h2{
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 4rem;
+}
+
+.hero:after{
+    content: url('../images/seta_preta.png');
+    position: absolute;
+    height: 35px;
+    bottom: 40px;
+    animation: movearrow .6s infinite alternate ease-in-out;
+
+}
+
+@keyframes movearrow {
+    0%{
+        -webkit-transform: translateY(0);
+        opacity: .4;
+    }
+    100%{
+        -webkit-transform: translateY(0.4em);
+        opacity: .9;
+    }
+}
+
+@-webkit-keyframes movearrow{
+    0%{
+        -webkit-transform: translateY(0);
+        opacity: .4;
+    }
+    100%{
+        -webkit-transform: translateY(0.4em);
+        opacity: .9;
+    }
+}
+
+/* ABOUT */
+
+.about{
+    grid-area: about;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.about .item{
+    padding: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.about .item h3{
+    font-weight: 700;
+    font-size: 4rem;
+}
+
+.about .item p{
+    font-size: 1.8rem;
+    margin: 30px 0;
+}
+
+.about .item .btn-know-more{
+    font-size: 1.6rem;
+    font-weight: 400;
+    align-self: flex-start;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+}
+
+.about .item .btn-know-more:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 100%;
+    bottom: -2px;
+    background: #000000;
+    height: 1px;
+    -webkit-transition-property: right;
+    transition-property: right;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+.about .item .btn-know-more:hover:before, .about .item .btn-know-more:focus:before, .about .item .btn-know-more:active:before {
+    right: 0;
+}
+
+.about .image{
+    height: 100%;
+    width: 100%;
+}
+
+.about .image.right{
+    background: url(../images/bridge.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.about .image.left{
+    background: url(../images/sky.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+/* SERVICES */
+
+.services{
+    grid-area: services;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.services .service{
+    padding: 70px 30px;
+    text-align: center;
+}
+
+.services .service img{
+    width: 250px;
+    margin-bottom: 30px;
+}
+
+.services .service h3{
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.services .service p{
+    font-size: 2rem;
+    max-width: 400px;
+    margin: 20px auto 0;  
+    line-height: 25px;
+}
+
+.services .service:nth-child(1){
+    background-color: lightskyblue;
+}
+
+.services .service:nth-child(2){
+    background-color: lightpink;
+}
+
+/* PROJETS */
+
+.projects{
+    grid-area: projects;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.projects .project{
+    overflow: hidden;
+}
+
+.projects .project img{
+    height: 100%;
+    transition: ease .4s;
+}
+
+.projects a:hover img{
+    transform: scale(1.12);
+    opacity: 0.95;
+}
+
+/* FOOTER */
+
+.footer{
+    grid-area: footer;
+    background-color: lightgreen;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 100px 0;
+    align-items: center;
+}
+
+.footer h4 a{
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    transition: ease-in-out .3s;
+}
+
+.footer h4 a:hover{
+    color: rgb(240, 255, 240);
+}
+
+.footer nav{
+    margin: 50px 0;
+}
+
+.footer nav ul{
+    display: flex;
+    justify-content: center;
+}
+
+.footer nav ul li a{
+    font-weight: 400;
+    font-size: 2rem;
+    margin: 20px;
+    transition: ease-in-out .3s;
+    display: inline-block;
+}
+
+.footer nav ul li a:hover{
+    font-weight: 500;
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.footer .social a{
+    margin: 20px;
+}
+
+.footer .social i{
+    font-size: 2rem;
+    transition: ease-in-out .3s;
+}
+
+.footer .social i:hover{
+    color: #fff;
+}
