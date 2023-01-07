@@ -18,7 +18,7 @@
 /* RESPONSIVE */
 
 .header nav label{
-    display: inline-flex;
+    display: block;
     margin-left: 140px;
 }
 
